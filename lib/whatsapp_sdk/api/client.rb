@@ -23,7 +23,7 @@ module WhatsappSdk
         params(
           access_token: String,
           api_version: String,
-          logger: T.nilable(T.any(Logger, T.class_of(Logger))),
+          logger: T.nilable(T.any(::Logger, T.class_of(::Logger))),
           logger_options: Hash
         ).void
       end

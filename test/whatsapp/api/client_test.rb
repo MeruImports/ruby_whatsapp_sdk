@@ -64,7 +64,7 @@ module WhatsappSdk
 
       def test_logs_http_requests_into_the_logger_without_response_body
         logger_io = StringIO.new
-        client = Client.new('test_token', ApiConfiguration::DEFAULT_API_VERSION, Logger.new(logger_io))
+        client = Client.new('test_token', ApiConfiguration::DEFAULT_API_VERSION, ::Logger.new(logger_io))
 
         stub_test_request(:get)
         client.send_request(endpoint: 'test', http_method: 'get')
@@ -82,7 +82,7 @@ module WhatsappSdk
         client = Client.new(
           'test_token',
           ApiConfiguration::DEFAULT_API_VERSION,
-          Logger.new(logger_io),
+          ::Logger.new(logger_io),
           { bodies: true }
         )
 
@@ -112,7 +112,7 @@ module WhatsappSdk
       end
 
       def faraday_middlewares(client)
-        faraday = client.send(:faraday, url: '')
+        faraday = client.send(:faraday, url: 'localhost:3000')
         faraday.builder.handlers
       end
 

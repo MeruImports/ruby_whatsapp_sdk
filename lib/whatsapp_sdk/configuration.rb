@@ -12,7 +12,7 @@ module WhatsappSdk
   class Configuration
     extend T::Sig
 
-    logger_or_subclass_or_nil = T.nilable(T.any(Logger, T.class_of(Logger)))
+    logger_or_subclass_or_nil = T.nilable(T.any(::Logger, T.class_of(::Logger)))
 
     sig { returns(String) }
     attr_accessor :access_token

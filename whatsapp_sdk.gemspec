@@ -47,7 +47,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency('sorbet-runtime', "~>0.5")
 
-  spec.add_dependency("faraday", "~> 2")
+  spec.add_dependency("faraday", "< 2")
   spec.add_dependency("faraday-multipart", "~> 1")
   spec.add_dependency("zeitwerk", "~> 2")
   spec.metadata['rubygems_mfa_required'] = 'true'
